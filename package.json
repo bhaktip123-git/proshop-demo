@@ -15,9 +15,17 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontened",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.0",
+    "dotenv": "^17.4.2",
+    "nodemon": "^3.1.14"
   }
 }
