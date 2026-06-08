@@ -4,16 +4,23 @@ dotenv.config();
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errormiddleware.js';
 import productRoutes from './routes/productroutes.js';
+import userRoutes from './routes/userroutes.js'
 const port = process.env.PORT || 5000;
 
 connectDB();
 
 const app = express();
+
+//body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

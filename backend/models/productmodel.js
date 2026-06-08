@@ -52,7 +52,7 @@ const productSchema = new mongoose.Schema({
     required: true, 
     default: 0
     },
-    numreviews: {
+    numReviews: {
     type: Number,
     required: true,
     default: 0
@@ -61,7 +61,7 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-    countinstock: { 
+    countInStock: { 
     type: Number,
     required: true,
     default: 0
