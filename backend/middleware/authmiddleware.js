@@ -27,6 +27,7 @@ import User from '../models/usermodel.js';
 
 //admin middleware
 const admin = (req, res, next) => {
+
     if (req.user && req.user.isAdmin) {
         next();
     } else {
